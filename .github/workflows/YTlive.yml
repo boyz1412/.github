@@ -20,14 +20,14 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(youtube-dl -g https://youtu.be/w_Ma8oQLmSM)
         EOL
-    - name: Get skynews-uk.m3u8
+    - name: Get ArirangRadio.m3u8
       run: |
-        touch ./skynews-uk.m3u8
-        sudo cat >./skynews-uk.m3u8 <<EOL
+        touch ./ArirangRadio.m3u8
+        sudo cat >./ArirangRadio.m3u8 <<EOL
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(youtube-dl -g https://youtu.be/9Auq9mYxFEE)
+        $(youtube-dl -g https://youtu.be/P1fX2GGdVS0)
         EOL
     - name : Upload artifact
       uses: actions/upload-artifact@master
