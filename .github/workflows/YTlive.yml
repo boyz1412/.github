@@ -20,6 +20,15 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(youtube-dl -g https://www.youtube.com/watch?v=w_Ma8oQLmSM)
         EOL
+    - name: Get skynews-uk.m3u8
+      run: |
+        touch ./skynews-uk.m3u8
+        sudo cat >./skynews-uk.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://www.youtube.com/watch?v=9Auq9mYxFEE)
+        EOL
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
