@@ -29,6 +29,15 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(youtube-dl -g https://youtu.be/P1fX2GGdVS0)
         EOL
+    - name: Get OC1.m3u8
+      run: |
+        touch ./OC1.m3u8
+        sudo cat >./OC1.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://olympics.com/en/live/?slug=oc1)
+        EOL
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
