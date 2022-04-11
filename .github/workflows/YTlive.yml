@@ -29,6 +29,24 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(youtube-dl -g https://youtu.be/P1fX2GGdVS0)
         EOL
+    - name: Get EBCNews.m3u8
+      run: |
+        touch ./EBCNews.m3u8
+        sudo cat >./EBCNews.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://youtu.be/ABn_ccXn_jc)
+        EOL
+    - name: Get EBCFNC.m3u8
+      run: |
+        touch ./EBCFNC.m3u8
+        sudo cat >./EBCFNC.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(youtube-dl -g https://youtu.be/LbS-xQ67fos)
+        EOL
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
